@@ -8,21 +8,14 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Send the email to your backend or mailing list service
-    const response = await fetch('/api/subscribe', {
+    await fetch('/api/subscribe', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ email }),
     });
-
-    const data = await response.json();
-
-    if (response.status === 200) {
-      alert(`Thank you for signing up, ${email}!`);
-    } else {
-      alert(`Error: ${data.message}`);
-    }
+    alert(`Thank you for signing up, ${email}!`);
   };
 
   return (
@@ -32,8 +25,8 @@ export default function Home() {
           <Image
             src={logo}  // Use the imported logo
             alt="Grayband Pro Logo"
-            width={400}
-            height={400}
+            width={500}
+            height={500}
             className="logo"
           />
         </div>
@@ -48,10 +41,6 @@ export default function Home() {
           />
           <button type="submit">Learn More</button>
         </form>
-        <div className="investor-info animate-fade-in">
-          <h2>Investor Information</h2>
-          <p>Grayband Pro is at the forefront of innovative safety solutions. We invite investors to join us in our mission to enhance personal security and safety for everyone. For more details about investment opportunities, please contact us at <a href="mailto:invest@graybandpro.com">invest@graybandpro.com</a>.</p>
-        </div>
       </main>
       <footer className="footer animate-fade-in">
         &copy; {new Date().getFullYear()} Grayband Pro. All rights reserved.
@@ -103,18 +92,6 @@ export default function Home() {
           background-color: #fff;
           color: #000;
           cursor: pointer;
-        }
-        .investor-info {
-          margin-top: 40px;
-          text-align: center;
-          max-width: 600px;
-        }
-        .investor-info h2 {
-          margin-bottom: 10px;
-          font-size: 1.5rem;
-        }
-        .investor-info p {
-          font-size: 1rem;
         }
         .footer {
           padding: 20px;
