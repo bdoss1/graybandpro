@@ -32,8 +32,8 @@ export default function Home() {
           <Image
             src={logo}  // Use the imported logo
             alt="Grayband Pro Logo"
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             className="logo"
           />
         </div>
