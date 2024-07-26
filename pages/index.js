@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import { logo } from '../lib/images';  // Import the logo
+import { logo } from '../lib/images';
+import Link from 'next/link';
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -55,6 +56,10 @@ export default function Home() {
       </main>
       <footer className="footer animate-fade-in">
         &copy; {new Date().getFullYear()} Grayband Pro. All rights reserved.
+        <br />
+        <Link href="/policy">
+          <a>Privacy Policy</a>
+        </Link>
       </footer>
 
       <style jsx>{`
@@ -121,6 +126,11 @@ export default function Home() {
           text-align: center;
           background-color: #111;
           width: 100%;
+        }
+        .footer a {
+          color: #fff;
+          margin-left: 10px;
+          text-decoration: underline;
         }
         @keyframes logo-spin {
           from {
