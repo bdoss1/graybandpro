@@ -57,7 +57,7 @@ export default function Home() {
       <footer className="footer animate-fade-in">
         &copy; {new Date().getFullYear()} Grayband Pro. All rights reserved.
         <br />
-        <Link href="/policy">
+        <Link href="#">
           <a>Privacy Policy</a>
         </Link>
       </footer>
